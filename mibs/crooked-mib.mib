@@ -1,0 +1,44 @@
+-- Crooked MIB
+-- This will not be straight forward.
+-- half PoC, half WTF (then divide by zero)
+    
+    CROOKED-MIB DEFINITIONS ::= BEGIN
+    
+    IMPORTS
+        MODULE-IDENTITY,
+        OBJECT-IDENTITY,
+        enterprises
+            FROM SNMPv2-SMI;
+    
+    crooked MODULE-IDENTITY
+    
+    LAST-UPDATED "201904041200Z"        -- April 4, 2019 12:00:00 GMT
+    ORGANIZATION
+        "Crooked Collusion"
+    CONTACT-INFO
+        "https://crooked.app"
+    
+    DESCRIPTION
+        "After being irratated by enough vendor MIBs that are just
+        broken, I decided to get my own PEN and break stuff the 
+        crooked way."
+    
+    -- Revision History
+    REVISION "201904041200Z"            -- April 4, 2019 12:00:00 GMT
+    DESCRIPTION 
+        "Initial offering."
+    ::= { enterprises 53723 }           -- PEN from IANA
+    
+    crookedInfo OBJECT-IDENTITY
+        STATUS current
+        DESCRIPTION
+            "This is crooked information."
+        ::= { crooked 1 }
+
+    crookedStatus OBJECT-IDENTITY
+        STATUS current
+        DESCRIPTION
+            "This is the crooked status."
+        ::= { crooked 2 }
+
+        END
